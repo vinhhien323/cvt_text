@@ -50,9 +50,9 @@ def _load_cpickle_memoize(path):
 
 
 def write_cpickle(o, path):
-  tf.gfile.MakeDirs(path.rsplit('/', 1)[0])
-  with tf.gfile.GFile(path, 'w') as f:
-    cPickle.dump(o, f, -1)
+  tf.io.gfile.makedirs(path.rsplit('/', 1)[0])
+  with tf.io.gfile.GFile(path, 'w') as f:
+    pickle.dump(o, f, -1)
 
 
 def log(*args):
