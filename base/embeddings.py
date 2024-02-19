@@ -127,7 +127,7 @@ class PretrainedEmbeddingLoader(object):
         w = normalize_word(split[0])
 
         try:
-          vec = np.array(map(float, split[1:]), dtype='float32')
+          vec = np.array(list(map(float, split[1:])), dtype='float32')
           if vec.size != self.vector_size:
             utils.log('vector for line', i, 'has size', vec.size, 'so skipping')
             utils.log(line[:100] + '...')
